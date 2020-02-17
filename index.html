@@ -7,18 +7,27 @@
     <body>
         <!--Doorcode-->
         <a-scene>
-            <a-assets timeout="20000">
+            <a-assets>
               <img id="harvest" src="art/harvest_season.JPG">
               <img id="sisters" src="art/sisters.JPG">
               <img id="younglady" src="art/young_lady.JPG">
             </a-assets>
 
             <a-box src="#younglady" position="-1 2 -2" rotation="0 0 0" scale="2 2 0.2"></a-box>
-            <a-box src="#sisters" position="2 2 0" rotation="0 90 0" scale="2 2 0.2"></a-box>
-            <a-box src="#harvest" position="0 2 2" rotation="0 0 0" scale="4 2 0.2"></a-box>
+            <a-entity light="type: spot; angle: 50; intensity: 0.5; distance: 2; penumbra: 1" position="-1 0.5 -1.7" rotation="90 0 90"></a-entity>
 
-            <a-entity light="type: point; intensity: 5; distance: 5;" position="0 5 0" rotation="180 0 0"></a-entity>
-            <rw-room height="5" position="-2 0 -2" material="color:#111">
+            <a-box src="#sisters" position="2 2 0" rotation="0 90 0" scale="2 2 0.2"></a-box>
+            <a-entity light="type: spot; angle: 50; intensity: 0.5; distance: 2; penumbra: 1" position="1.7 0.5 0" rotation="90 0 90"></a-entity>
+
+            <a-box src="#harvest" position="0 2 2" rotation="0 0 0" scale="4 2 0.2"></a-box>
+            <a-entity light="type: spot; angle: 80; intensity: 0.5; distance: 2; penumbra: 1" position="1 0.7 1.7" rotation="90 0 90"></a-entity>
+            <a-entity light="type: spot; angle: 80; intensity: 0.5; distance: 2; penumbra: 1" position="-1 0.7 1.7" rotation="90 0 90"></a-entity>
+
+            <a-entity light="type: ambient; intensity:0.75" ></a-entity>
+
+            <a-entity light="type: point; intensity: 0.5; distance: 10;" position="0 4.5 0"></a-entity>
+
+            <rw-room height="5" position="-2 0 -2" material="color:#EEE">
                 <rw-wall position="4 0 0"></rw-wall>
                 <rw-wall position="4 0 4">
                     <rw-doorhole id="holeC"></rw-doorhole>
@@ -29,17 +38,17 @@
                       <rw-doorlink from="#holeA" to="#holeB" position="2.5 0 0"></rw-doorlink>
                 </rw-wall>
                 <rw-ceiling></rw-ceiling>
+                <rw-floor></rw-floor>
             </rw-room height="5">
-            <rw-room height="5" position="0 0 -3" material="color:#FFF">
-                <rw-wall position=" 1 0 -1" material="color:#787"></rw-wall>
-                <rw-wall position=" 1 0  1" material="color:#877">
+            <rw-room height="5" position="0 0 -3" material="color:#EEE">
+                <rw-wall position=" 1 0 -1"></rw-wall>
+                <rw-wall position=" 1 0  1">
                     <rw-doorhole id="holeB"></rw-doorhole>
                 </rw-wall>
-                <rw-wall position="-1 0  1" material="color:#878"></rw-wall>
-                <rw-wall position="-1 0 -1" material="color:#778"></rw-wall>
+                <rw-wall position="-1 0  1"></rw-wall>
+                <rw-wall position="-1 0 -1"></rw-wall>
                 <rw-ceiling></rw-ceiling>
             </rw-room>
-            <a-entity environment="preset: arches; dressingAmount: 10"></a-entity>
         </a-scene>
     </body>
 </html>
